@@ -1,0 +1,5 @@
+Next JS is React framework.
+Its build on React framework.
+
+Next JS is full stack react app
+It simplifies the process of building full stack app with React
