@@ -1,0 +1,83 @@
+==============================================
+
+interface ISidebarItem {
+  name: string;
+  icon: LucideIcon;
+  path: string;
+  items?: ISubItem[];
+}
+In the given TypeScript interface ISidebarItem, the property items is optional and has a type of an array of objects that conform to the ISubItem interface. The ISubItem interface is assumed to be defined elsewhere in your codebase. This is an optional property denoted by the ? symbol. It means that an object of this type may or may not have a property named items. If it does have an items property, its value should be an array ([]) of objects that conform to the ISubItem interface. In practical terms, it allows you to create objects of type ISidebarItem where items is an optional property, and if it exists, it should be an array of objects conforming to the ISubItem interface. This structure is often used to represent hierarchical or nested data, where a sidebar item can have sub-items.
+
+
+
+==================================================================
+curly braces {} are primarily used for embedding JavaScript expressions in JSX and for dynamic routing, 
+while parentheses () are used for function calls, grouping expressions, and conditional rendering in JSX.
+
+1) Curly Braces {}:
+  a)JSX Code Blocks: In Next.js, you use curly braces in JSX to embed JavaScript expressions or code blocks within your JSX components. This allows you to include dynamic values, variables, or JavaScript logic within the JSX syntax.
+    const dynamicValue = "Hello, Next.js!";
+    function MyComponent() {
+    return (
+      <div>
+        <p>{dynamicValue}</p>
+      </div>
+    );
+  }
+  b)Dynamic Routing: In the context of dynamic routing, curly braces are used to specify dynamic segments in the URL. For example, in a file named [id].js, the [id] indicates a dynamic segment, and its value can be accessed using router.query.id.
+    import { useRouter } from 'next/router';
+    function DynamicPage() {
+      const router = useRouter();
+      const dynamicId = router.query.id;
+
+      return (
+        <div>
+          <p>Dynamic ID: {dynamicId}</p>
+        </div>
+      );
+    }
+2) Parentheses ():
+  a)Function Calls: Parentheses are used for calling functions in JavaScript. In Next.js, you'll use parentheses to call functions, including React components.
+    function MyComponent() {
+      return <p>Hello, Next.js!</p>;
+    }
+    // Using the component
+    const result = MyComponent();
+  b)Grouping in JSX: In JSX, parentheses can be used to group expressions or to wrap multiple elements for correct rendering. This is particularly useful when returning multiple elements from a component without introducing unnecessary parent elements.
+    function MultipleElements() {
+    return (
+      <div>
+        <p>Element 1</p>
+        <p>Element 2</p>
+      </div>
+    );
+  }
+  c)Conditional Rendering: Parentheses are often used to group conditions when doing conditional rendering in JSX.
+    function ConditionalRender({ condition }) {
+    return (
+      <div>
+        {condition ? (
+          <p>Render this if condition is true</p>
+        ) : (
+          <p>Render this if condition is false</p>
+        )}
+      </div>
+    );
+  }
+
+  ================================================
+
+  By Default next js make every component server component , to make it client add "use client" at top of .tsx file
+
+  ================================================
+  useMemo is hook, its is used for whenever dependency changes its use that property as per dependency
+
+  const isActive = useMemo(() => {
+        return path === pathname;
+    }, [path, pathname])  / if clicked path and current path is same then isActive true
+
+  ========================
+  to make classname dynamic use backtick (`)
+
+  ================================
+  const pathname = usePathname(); to get ccurrent pathname

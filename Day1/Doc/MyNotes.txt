@@ -3,3 +3,33 @@ Its build on React framework.
 
 Next JS is full stack react app
 It simplifies the process of building full stack app with React
+
+
+Benefits of next JS:
+1)Full Stack Apps: We can create frontend and backend with next JS
+2)File based routing: react router no need. create folder and its consider
+  folder as routing
+3)Server side rendering: its provide all server side content at browser
+
+
+Next JS project:
+npx create-next-app@latest
+create-next-app@14.0.4 :y
+project name: first-Apps
+Typescript : no
+ESLint: yes
+tailwind css:no
+src/ directory: no
+App router: yes
+import alis: no
+
+
+App Router and Page Router:
+page router is older react route approach
+App router is new next JS folder based route approach
+
+
+What is react and why we use it:
+-React us JavaScript lib to build user interface
+-We use it to make code simpler. lot of lib provided by react
+which help us to reduce code and reuse existing lib features

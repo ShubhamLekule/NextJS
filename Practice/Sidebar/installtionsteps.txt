@@ -1,0 +1,66 @@
+npx create-next-app@latest
+npm install lucide-react //for icons
+npx tailwindcss init //no need if already there the tailwind.config.ts file
+
+add react snippet extention in VS Code editor to use shortcuts to create react code:ES7+React/Redux/React-Native snippet
+npm run dev // to run project
+
+To Remove default coluring go to global.css file: I have removed body element properties from global.css
+====================================================================
+created color object in tailwind.config.ts file to use in the code:
+,
+  theme: {
+    extend: {
+      sidebar:{
+        colors:{
+        active: '#6b32ec',
+        background: '#f5f5ff',
+        iconColor: '#636c80'
+      },
+    }
+    },
+  },
+  created inside theme
+to use later in code use like below:
+<div
+    className='text-sidebar-active'
+    >Sidebar</div>
+
+here we use tailwind property in className give the which need to colored i.e text then tailwind obiject created className
+i.e sidebar then the property of created object i.e active
+  ===============================================================
+
+  To create a layout which getting used in all pages, we created separate components folder and then created sidebar init
+  will add all design in this sidebar.
+  then will add this sidebar into layout.tsx file
+  ===========================================================================================
+
+  class names and meaning
+  h-screen = 100vh
+  w-64 = 64 pixel
+  bg-white = background white
+  shadow-lg = shadow large
+  fixed= position will not chage
+  top-0 = top position on screen 
+  left-0 = left position on screen
+  z-10= Tailwind CSS, z-10 is a predefined class that sets the z-index to 10,the z-10 class name likely refers to a utility class for setting the z-index property in CSS. The z-index property determines the stacking order of elements on the z-axis (front-to-back order). Elements with a higher z-index value will appear in front of elements with a lower z-index value.
+  flex  = flex typically refers to a utility class that applies the CSS display: flex; property to an element. The flex property is a shorthand for setting the display property to flex, which enables the Flexbox layout for the element. When the display property is set to flex, the container (in this case, the div with the flex class) becomes a Flex container, and its direct children become Flex items. Flexbox provides a powerful and efficient way to lay out, align, and distribute space among items in a container, even when their size is unknown or dynamic. If you're using a utility-first CSS framework like Tailwind CSS, flex is a predefined class that applies display: flex; to the element.
+  h-screen = the height (h) of the element to take up the full height of the screen (screen). Essentially, it is used to make an element fill the entire height of the viewport. This class is useful when you want to create a full-height container, such as for a landing page, hero section, or any other component that you want to extend vertically to cover the entire viewport.
+  h-full = It sets the height (h) of the element to take up the full height of its containing parent. This class is useful when you want an element to fill the entire height of its parent container. It can be applied to various elements like divs, sections, or other container elements.
+  w-full = It sets the width (w) of the element to take up the full width of its containing parent. This class is useful when you want an element to fill the entire width of its parent container. It can be applied to various elements like divs, sections, or other container elements.
+  bg-gray-200 =  the background color will be a light gray, as the numerical suffix in bg-gray-200 corresponds to the intensity or shade of gray. The higher the number, the darker the gray
+  flex flex-col= This class is used to set the flex-direction property to "column", which means the flex container's children will be positioned in a column, stacking vertically.  the combination of flex and flex-col classes sets up a Flex container with a column layout. Any direct children of this container will be arranged vertically, one below the other.  If you're not using a utility-first CSS framework, you would typically set the flex-direction: column; property in your custom CSS.
+  ml-64= It sets the left margin (ml) of an element to a specific value, in this case, 64 units. the content inside the div will be indented or moved to the right by a distance equivalent to 64 units. The unit can be pixels, rems, or another unit depending on the configuration of your CSS framework. it provides a quick and convenient way to manage margins and paddings without writing custom CSS. If you're not using a utility-first CSS framework, you would typically set the margin using custom CSS, like margin-left: 64px;
+  p-4 = It sets the padding (p) of an element to a specific value, in this case, 4 units. the content inside the div will be surrounded by a padding space equivalent to 4 units. The unit can be pixels, rems, or another unit depending on the configuration of your CSS framework. it provides a quick and convenient way to manage margins and paddings without writing custom CSS. If you're not using a utility-first CSS framework, you would typically set the padding using custom CSS, like padding: 4px;
+  space-y-10 = It sets the spacing between the direct children of a container using the --space-y CSS custom property, where 10 is the specified value.
+  w-fit =  the w-fit class to set the width of an element to the width of its content.
+  flex items-center = used to horizontally align the child elements of a Flex container at the center along the cross-axis. the flex class sets up the container as a Flex container, and the items-center class aligns the child elements horizontally at the center . The items-center class is part of a set of Flexbox utility classes that make it easy to apply common Flexbox layouts without writing custom CSS. If you're not using a utility-first CSS framework, you would typically achieve the same alignment using custom CSS rules for Flexbox.
+  flex space-x-2 =  It's part of the spacing utility classes and is used to add horizontal spacing between the direct child elements of a container. the flex class sets up the container as a Flex container, and the space-x-2 class adds horizontal spacing of 2 units between the child elements. The space-x-2 class is part of a set of spacing utility classes in Tailwind CSS, providing a convenient way to manage horizontal spacing without writing custom CSS. The unit can be pixels, rems, or another unit depending on the configuration of your CSS framework.
+  h-15 = This class sets the height (h) of the element to a specific value. In this case, h-15 would set the height to 15 units. The unit could be pixels, rems, or another unit depending on the configuration of your CSS framework.
+  hover:bg-sidebar-background = after hovering its use the property which crated in global.css
+  rounded-lg = It's part of the border-radius utility classes and is used to apply a rounded border to an element, giving it a "rounded" appearance. the rounded-lg class applies a larger border-radius to the element, creating rounded corners. The lg typically stands for "large" in the context of Tailwind CSS, indicating a larger border-radius compared to other size options like sm (small) or md (medium).
+  cursor-pointer = It sets the CSS cursor property to "pointer," indicating that the associated element should be displayed with a pointing hand cursor when hovered, suggesting to users that the element is clickable or interactive. This class is useful for styling interactive elements like buttons, links, or any other elements that trigger actions when clicked. It enhances the user experience by providing visual feedback on interactive elements.
+  flex justify-between = It's part of the Flexbox utility classes and is used to horizontally distribute child elements of a Flex container, placing the first child element at the start of the container and the last child element at the end, while distributing any additional space evenly between the elements. the flex class sets up the container as a Flex container, and the justify-between class distributes the child elements horizontally, placing the first child at the start, the last child at the end, and evenly distributing space between the elements. The justify-between class is useful for creating layouts where you want to maximize the space between elements in a Flex container.
+  text-sm = This class sets the font size (text-size) of the text to small. In Tailwind CSS, text-sm typically corresponds to a smaller font size.
+  font-semibold = This class sets the font weight (font-weight) of the text to a semi-bold or semi-semibold weight. It makes the text appear bolder than the default font weight but not as bold as font-bold.
+
